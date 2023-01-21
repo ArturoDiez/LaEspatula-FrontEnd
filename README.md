@@ -1,6 +1,9 @@
-#### FrontEnd de La Espátula
+# FrontEnd de La Espátula
+
+```
 
 Frontend que consume la API de la espátula creado en Vue3
+```
 
 ## Project setup
 
