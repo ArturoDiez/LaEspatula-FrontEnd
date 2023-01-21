@@ -71,7 +71,7 @@ export default{
     const selectedLiga = ref();
     const ligas =  ref(['Challenger','GrandMaster','Master']);
 
-        watch(selectedLiga, (newValue) => fetch("http://127.0.0.1:7000/listaTFTEU/" + newValue )
+        watch(selectedLiga, (newValue) => fetch("https://api.laespatula.net/listaTFTEU/" + newValue )
             .then(res => res.json())
             .then(data => dataGeneral.value = data)
             .then(data => items.value = data.lista.datos))

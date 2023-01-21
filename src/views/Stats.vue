@@ -122,32 +122,32 @@ import moment from 'moment';
 export default {
   setup() {
         onMounted(() => {
-            fetch("http://127.0.0.1:7000/datosTFT/8").then(res => res.json())
+            fetch("https://api.laespatula.net/datosTFT/8").then(res => res.json())
             .then(data => {top1Jug.value = data.top1.cuenta; top1Date.value = data.top1.start_date;
                     plotdata.value = data.plot})
 
-            fetch("http://127.0.0.1:7000/hottestStreakList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/hottestStreakList/5").then(res => res.json())
             .then(data => hottest.value = data)
 
-            fetch("http://127.0.0.1:7000/coldestStreakList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/coldestStreakList/5").then(res => res.json())
             .then(data => coldest.value = data)
 
-            fetch("http://127.0.0.1:7000/rachaMasList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/rachaMasList/5").then(res => res.json())
             .then(data => rachaMas.value = data)
 
-            fetch("http://127.0.0.1:7000/rachaMenosList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/rachaMenosList/5").then(res => res.json())
             .then(data => rachaMenos.value = data)
 
-            fetch("http://127.0.0.1:7000/masVictList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/masVictList/5").then(res => res.json())
             .then(data => masVict.value = data)
 
-            fetch("http://127.0.0.1:7000/masWRList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/masWRList/5").then(res => res.json())
             .then(data => masWR.value = data)
 
-            fetch("http://127.0.0.1:7000/masVicioList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/masVicioList/5").then(res => res.json())
             .then(data => masVicio.value = data)
 
-            fetch("http://127.0.0.1:7000/picosLPsList/5").then(res => res.json())
+            fetch("https://api.laespatula.net/picosLPsList/5").then(res => res.json())
             .then(data => pico.value = data)
         })
 

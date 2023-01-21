@@ -19,7 +19,7 @@ import { ref, onMounted } from "vue";
 export default {
   setup() {
         onMounted(() => {
-            fetch("http://127.0.0.1:7000/masWRList/all").then(res => res.json())
+            fetch("https://api.laespatula.net/masWRList/all").then(res => res.json())
             .then(data => wr.value = data)
         })
 

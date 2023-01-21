@@ -15,7 +15,7 @@ import { ref, onMounted } from "vue";
 export default {
   setup() {
         onMounted(() => {
-            fetch("http://127.0.0.1:7000/coldestStreakList/all").then(res => res.json())
+            fetch("https://api.laespatula.net/coldestStreakList/all").then(res => res.json())
             .then(data => coldest.value = data)
         })
 

@@ -256,9 +256,3 @@
 
 <script setup>
 </script>
-
-<style scoped>
- .bg{
-    background: url("/assets/bandera.png");
- }
-</style>

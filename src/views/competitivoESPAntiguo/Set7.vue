@@ -127,16 +127,16 @@ export default{
     'Snapshot 16', 'Snapshot 17']);
     const cups =  ref(['FlashCup 1', 'FlashCup 2', 'FlashCup 3', 'FlashCup 4', 'FlashCup 5', 'MasterCup 1', 'MasterCup 2', 'MasterCup 3']);
 
-        watch(selectedSnap, (newValue) => fetch("http://127.0.0.1:7000/snapshotsESP/7/" + newValue )
+        watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsESP/7/" + newValue )
             .then(res => res.json())
             .then(data => itemsSnap.value = data.datos))
 
-        watch(selectedCup, (newValue) => fetch("http://127.0.0.1:7000/cupsESP/7/" + newValue )
+        watch(selectedCup, (newValue) => fetch("https://api.laespatula.net/cupsESP/7/" + newValue )
             .then(res => res.json())
             .then(data => itemsCup.value = data.datos))
 
         onMounted(() => {
-            fetch("http://127.0.0.1:7000/totalESP/7").then(res => res.json())
+            fetch("https://api.laespatula.net/totalESP/7").then(res => res.json())
             .then(data => items.value = data.datos);
         })
             

@@ -40,7 +40,7 @@ export default{
     const selectedSet = ref()
     const sets =  ref(['8'])
 
-        watch(selectedSet, (newValue) => fetch("http://127.0.0.1:7000/top1EU/" + newValue ).then(res => res.json())
+        watch(selectedSet, (newValue) => fetch("https://api.laespatula.net/top1EU/" + newValue ).then(res => res.json())
             .then(data => items.value = data))
 
         const items = ref();

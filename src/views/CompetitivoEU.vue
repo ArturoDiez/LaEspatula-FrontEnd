@@ -151,18 +151,18 @@ export default{
     const snapshots =  ref(['Snapshot 1', 'Snapshot 2']);
     const cups =  ref([]);
 
-        watch(selectedSnap, (newValue) => fetch("http://127.0.0.1:7000/snapshotsEU/8/" + newValue )
+        watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsEU/8/" + newValue )
             .then(res => res.json())
             .then(data => itemsSnap.value = data.datos))
 
-        watch(selectedCup, (newValue) => fetch("http://127.0.0.1:7000/GSCEU/8/" + newValue )
+        watch(selectedCup, (newValue) => fetch("https://api.laespatula.net/GSCEU/8/" + newValue )
             .then(res => res.json())
             .then(data => itemsCup.value = data.datos))
 
         onMounted(() => {
-            fetch("http://127.0.0.1:7000/totalSnapEU/8").then(res => res.json())
+            fetch("https://api.laespatula.net/totalSnapEU/8").then(res => res.json())
             .then(data => itemsLadder.value = data.datos);
-            fetch("http://127.0.0.1:7000/totalGSCEU/8").then(res => res.json())
+            fetch("https://api.laespatula.net/totalGSCEU/8").then(res => res.json())
             .then(data => itemsCupTotal.value = data.datos);
         })
             

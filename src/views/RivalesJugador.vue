@@ -47,12 +47,12 @@ export default
     const nick = useRoute().params.nick
 
     onMounted(() => {
-            fetch("http://127.0.0.1:7000/rivales/" + nick).then(res => res.json())
+            fetch("https://api.laespatula.net/rivales/" + nick).then(res => res.json())
             .then(data => items.value = data.datos);
         })
 
     onMounted(() => {
-            fetch("http://127.0.0.1:7000/rivales/" + nick).then(res => res.json())
+            fetch("https://api.laespatula.net/rivales/" + nick).then(res => res.json())
             .then(data => msj.value = data.mensaje);
         })
 

@@ -113,11 +113,11 @@ export default {
     const nick = useRoute().params.nick
 
     onMounted(() => {
-        fetch("http://127.0.0.1:7000/buscarTFT/" + nick).then(res => res.json())
+        fetch("https://api.laespatula.net/buscarTFT/" + nick).then(res => res.json())
             .then(data => {items.value = data,
               league.value = data.league, jugador.value = data.jugador})
 
-            fetch("http://127.0.0.1:7000/datosJugadores/" + nick).then(res => res.json())
+            fetch("https://api.laespatula.net/datosJugadores/" + nick).then(res => res.json())
             .then(data => {
               labels.value = data.labels, elo.value = data.elo,
                 racha.value = data.rachaP; hot.value = data.hotStreak; 

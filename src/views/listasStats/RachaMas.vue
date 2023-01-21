@@ -19,7 +19,7 @@ import { ref, onMounted } from "vue";
 export default {
   setup() {
         onMounted(() => {
-            fetch("http://127.0.0.1:7000/rachaMasList/all").then(res => res.json())
+            fetch("https://api.laespatula.net/rachaMasList/all").then(res => res.json())
             .then(data => racha.value = data)
         })
 
