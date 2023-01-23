@@ -67,7 +67,7 @@
         stripedRows>
           
             <Column field="POSITION" header="Posición" style="text-align:center;width:30px" ></Column>
-            <Column field="NAME" header="Cuenta"></Column>
+            <Column field="SUMMONER" header="Cuenta"></Column>
             <Column field="SS1" header="SS1"></Column>
             <Column field="SS2" header="SS2"></Column>
             <Column field="SS3" header="SS3"></Column>
@@ -100,7 +100,7 @@
          torneo europeo). Del top 3 al 80 sumarán puntos para el Ranking LVLUP Teamfight Tactics.</div>
     </v-card-text>
  </v-card>
-          <DataTable :value="itemsCups" responsiveLayout="scroll"  class="custom_table_class"
+          <DataTable :value="itemsCup" responsiveLayout="scroll"  class="custom_table_class"
         stripedRows>
           
             <Column field="POSITION" header="Posición" style="text-align:center;width:30px" ></Column>
@@ -146,7 +146,7 @@ export default{
     const selectedSnap = ref();
     const selectedCup = ref();
     const snapshots =  ref(['Snapshot 1', 'Snapshot 2']);
-    const cups =  ref([]);
+    const cups =  ref(['MasterCup 1']);
 
         watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsESP/8/" + newValue )
             .then(res => res.json())

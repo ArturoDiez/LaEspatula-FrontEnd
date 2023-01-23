@@ -3,7 +3,12 @@
 <div v-if="jugador != undefined">
     <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         stripedRows>
-            <Column field="topESP" header="Rango" style="text-align:center;width:30px" ></Column>
+            <Column field="topESP" header="Rango" style="text-align:center;width:30px" >
+            <template #body="slotProps">
+              <div v-if="slotProps.data.dentroLista == 'No'">-</div>
+              <div v-if="slotProps.data.dentroLista != 'No'">{{slotProps.data.topESP}}</div>
+            </template>
+            </Column>
             <Column field="nick" header="Nick"></Column>
             <Column field="cuenta" header="Cuenta">
             </Column>
@@ -12,7 +17,7 @@
                 <img v-if="slotProps.data.tier == 'CHALLENGER'" src="../assets/Challenger.png" width="20"/>
                 <img v-if="slotProps.data.tier == 'GRANDMASTER'" src="../assets/GrandMaster.png" width="20"/>
                 <img v-if="slotProps.data.tier == 'MASTER'" src="../assets/MasterTFT.png" width="20"/>
-                <span class="image-text">{{slotProps.data.tier}}</span>
+                <span class="image-text">{{slotProps.data.tier}} {{slotProps.data.division}}</span>
             </template></Column>
             <Column field="LPs" header="LPs"></Column>
             <Column field="twitter" header="Twitter">
@@ -43,7 +48,11 @@
             <template #body="slotProps">
               <div v-if="slotProps.data.winrate != undefined">{{(slotProps.data.winrate).toFixed(2)}}</div>
             </template></Column>
-            <Column field="topEUW" header="Top EUW" style="width:30px"></Column>
+            <Column field="topEUW" header="Top EUW" style="width:30px">
+            <template #body="slotProps">
+              <div v-if="slotProps.data.dentroLista == 'No'">-</div>
+              <div v-if="slotProps.data.dentroLista != 'No'">{{slotProps.data.topEUW}}</div>
+            </template></Column>
         </DataTable>
         <br/>
         <h2 style="text-align:center"> En las últimas 10 partidas su posición media ha sido {{posMed}}</h2>

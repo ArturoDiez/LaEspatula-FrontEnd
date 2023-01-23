@@ -1,7 +1,7 @@
 <template>
-<div :ref="plot" />
 <br/>
         <h2 style="text-align:center">{{top1Jug}} es el top 1 de españa desde: {{formatDate(top1Date)}}</h2>
+        <br/>
         <v-container>
             <v-row class="separacion">
                 <div class="mx-auto">

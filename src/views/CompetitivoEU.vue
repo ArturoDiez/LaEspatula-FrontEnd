@@ -67,7 +67,7 @@
         stripedRows>
           
             <Column field="POSITION" header="Posición" style="text-align:center;width:30px" ></Column>
-            <Column field="SUMMONER" header="Cuenta"></Column>
+            <Column field="NAME" header="Cuenta"></Column>
             <Column field="SS1" header="SS1"></Column>
             <Column field="SS2" header="SS2"></Column>
             <Column field="SS3" header="SS3"></Column>
@@ -79,7 +79,7 @@
             <Column field="SS9" header="SS9"></Column>
             <Column field="SS10" header="SS10"></Column>
             <Column field="SS11" header="SS11"></Column>
-            <Column field="PUNTOS" header="Puntos" style="width:30px" sortable="true"></Column> 
+            <Column field="TOTAL" header="Puntos" style="width:30px" sortable="true"></Column> 
         </DataTable>
         </v-window-item>
 
