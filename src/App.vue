@@ -59,19 +59,10 @@
                 <v-list-item-title class="text-yellow"><v-icon :icon="item.icon"></v-icon> {{ item.title }}</v-list-item-title>
               </v-list-item>
           </v-list>
-        <v-divider></v-divider>
-        <v-list class="bg-indigo-lighten-1">
-            <v-list-subheader class="text-white font-weight-bold"> LOR ESPAÑA </v-list-subheader>
-              <v-list-item  v-for="item in itemsLOR" :key="item.title" router-link  :to="item.route">
-                <v-list-item-title class="text-yellow"><v-icon :icon="item.icon"></v-icon> {{ item.title }}</v-list-item-title>
-              </v-list-item>
-        </v-list>
       </v-navigation-drawer>
 
   
   <v-main class="body-prime">
-    <v-container> 
-    </v-container>
     <v-container class="containerAdapter"><router-view></router-view></v-container>
   </v-main>
   
@@ -128,12 +119,6 @@
           { title: 'Competitivo Español', icon: 'mdi-format-list-checks',route:'/competitivoESPAntiguo' },
           { title: 'Competitivo Europeo', icon: 'mdi-format-list-checks',route:'/competitivoEUAntiguo' },
         ],
-
-        itemsLOR:
-        [
-          { title: 'Top100', icon: 'mdi-format-list-numbered',route:'/listaLOR'},
-        ],
-
       }),
       watch: 
       {
@@ -153,7 +138,7 @@
   <style scoped>
   @media (min-device-width: 900px) {
   .containerAdapter{
-    width:80vw;
+    width:90vw;
   }
 }
 

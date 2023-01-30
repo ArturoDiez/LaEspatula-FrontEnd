@@ -145,7 +145,7 @@ export default{
   setup() {
     const selectedSnap = ref();
     const selectedCup = ref();
-    const snapshots =  ref(['Snapshot 1', 'Snapshot 2']);
+    const snapshots =  ref(['Snapshot 1', 'Snapshot 2','Snapshot 3']);
     const cups =  ref(['MasterCup 1']);
 
         watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsESP/8/" + newValue )

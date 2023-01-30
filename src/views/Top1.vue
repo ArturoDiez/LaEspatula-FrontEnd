@@ -46,7 +46,7 @@ export default{
         const items = ref();
 
 
-        return { items, sets, selectedSet,}
+        return { items, sets, selectedSet}
     },
 
     methods:{

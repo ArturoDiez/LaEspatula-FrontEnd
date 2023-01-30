@@ -18,18 +18,19 @@
   </v-card>
  </v-row>
 </v-container>
+
 <br/>
+
         <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         stripedRows sortField="puntosMundialReckoning" :sortOrder="-1" >
-        <template #header>
-             <h2 style="text-align:center" class="titulo">Top TFT España   </h2>
-        </template>
             <Column field="nick" header="Nick"></Column>
             <Column field="semana1Reckoning" header="Semana 1"></Column>
             <Column field="semana2Reckoning" header="Semana 2"></Column>
             <Column field="semana3Reckoning" header="Semana 3"></Column>
             <Column field="puntosMundialReckoning" header="Puntos" style="width:30px" sortable="true"></Column> 
         </DataTable>
+
+
 </template>
 
 <script>
@@ -38,11 +39,12 @@ import { ref, onMounted} from "vue";
 export default{
   setup() {
         onMounted(() => {
-            fetch("https://api.laespatula.net/listaTFT?").then(res => res.json())
+            fetch("https://api.laespatula.net/puntosMundialReckoning").then(res => res.json())
             .then(data => items.value = data);
         })
 
         const items = ref();
+       
 
         return { items}
     }

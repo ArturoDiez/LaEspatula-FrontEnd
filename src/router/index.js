@@ -137,11 +137,6 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoEUAntiguo/Set4.vue'),
       },
       {
-        path: 'listaLOR',
-        name: 'ListaLOR',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/ListaLOR.vue'),
-      },
-      {
         path: 'termino',
         name: 'Termino',
         component: () => import(/* webpackChunkName: "home" */ '@/views/Termino.vue'),

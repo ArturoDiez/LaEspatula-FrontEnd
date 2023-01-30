@@ -1,6 +1,5 @@
 
 <template>
-
 <v-container>
   <v-row>
   <v-card
@@ -11,7 +10,6 @@
   <v-card-title >
       FAQs
     </v-card-title>
-
     <v-card-text>
       <div>No salgo en la lista y tengo elo suficiente para hacerlo, ¿qué hago? 
       (La lista es para los 100 primeros desde Challenger a Máster)</div>
@@ -64,7 +62,7 @@
             </template></Column>
             <Column field="link" header="Lolchess" style="text-align:center">
             <template #body="slotProps">
-              <a :href="slotProps.data.twitter" target="_blank">
+              <a :href="slotProps.data.link" target="_blank">
                 <v-img src="../assets/lolchess.svg" width="30"></v-img>
               </a>
             </template></Column>
@@ -89,6 +87,7 @@ export default{
         })
 
         const items = ref();
+    
 
         return { items}
     }

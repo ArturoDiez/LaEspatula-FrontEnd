@@ -38,7 +38,7 @@
             </template></Column>
             <Column field="link" header="Lolchess" style="text-align:center">
             <template #body="slotProps">
-              <a :href="slotProps.data.twitter" target="_blank">
+              <a :href="slotProps.data.link" target="_blank">
                 <v-img src="../assets/lolchess.svg" width="30"></v-img>
               </a>
             </template></Column>

@@ -149,8 +149,6 @@
  </v-row>
 </v-container>
 
-<br/>
-
 <v-container>
     <h2 class="text-yellow text-center">TFT Europa</h2>
     <br/>
@@ -254,5 +252,6 @@
 </v-container>
 </template>
 
-<script setup>
+<script>
+
 </script>
