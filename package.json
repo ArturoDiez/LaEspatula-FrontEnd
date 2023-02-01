@@ -19,7 +19,9 @@
     "roboto-fontface": "*",
     "vue": "^3.2.13",
     "vue-chartjs": "^5.2.0",
+    "vue-google-adsense": "^2.0.0",
     "vue-router": "^4.0.0",
+    "vue-scriptx": "^0.2.5",
     "vue3-easy-data-table": "^1.5.25",
     "vuetify": "^3.0.0",
     "webfontloader": "^1.0.0"

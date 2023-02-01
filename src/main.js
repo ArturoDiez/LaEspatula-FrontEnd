@@ -26,13 +26,17 @@ import InputText from 'primevue/inputtext';
 import Chart from 'primevue/chart';
 
 import 'chartjs-adapter-moment';
+import ScriptX from 'vue-scriptx';
+import Ads from 'vue-google-adsense';
 
-
+import AdsTemplate from './component/Ads.vue'
 
 const app = createApp(App)
 
 registerPlugins(app)
 
+app.use(ScriptX)
+app.use(Ads.Adsense)
 
 app.use(Primevue)
 app.component('DataTable', DataTable)
@@ -41,5 +45,7 @@ app.component('Row', Row)
 app.component('ColumnGroup', ColumnGroup)
 app.component('InputText', InputText)
 app.component('Chart', Chart)
+app.component('AdsTemplate', AdsTemplate)
 
 app.mount('#app')
+app.config.compilerOptions.isCustomElement = tag => tag.startsWith('ins')

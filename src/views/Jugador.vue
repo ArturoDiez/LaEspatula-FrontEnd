@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <h1 style="text-align:center"> Datos de <a v-if="jugador != undefined"> {{jugador.nick}} </a> <a v-if="jugador == undefined"> jugador erróneo </a></h1>
 <div v-if="jugador != undefined">
     <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"

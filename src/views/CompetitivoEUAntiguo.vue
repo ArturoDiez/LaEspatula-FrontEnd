@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <v-container>
     <h2 class="text-yellow text-center">Competitivo Europa</h2>
     <br/>

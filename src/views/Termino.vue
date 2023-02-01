@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
  <h1>Terms and Conditions</h1>
 <p>Last updated: May 01, 2022</p>
 <p>Please read these terms and conditions carefully before using Our Service.</p>

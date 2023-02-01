@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <br/>
         <h2 style="text-align:center">{{top1Jug}} es el top 1 de españa desde: {{formatDate(top1Date)}}</h2>
         <br/>

@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <h1 style="text-align:center"> Encuentra a quién se ha enfrentado tu jugador favorito </h1>
 <br/>
 <br/>

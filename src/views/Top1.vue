@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <v-select
   v-model="selectedSet"
   label="Set"

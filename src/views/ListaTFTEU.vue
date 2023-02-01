@@ -1,5 +1,5 @@
 <template>
-
+<AdsTemplate/>
 <v-container>
   <h1 style="text-align:center" class="titulo">Cortes de ELO</h1>
   <br/>

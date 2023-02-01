@@ -41,7 +41,7 @@
           </v-list>
           <v-list class="bg-indigo-lighten-1">
             <v-list-subheader class="text-white font-weight-bold"> TFT ESPAÑA </v-list-subheader>
-              <v-list-item  v-for="item in itemsTFTESP" :key="item.title" router-link  :to="item.route">
+              <v-list-item  v-for="item in itemsTFTESP" :key="item.title" a :to="item.route">
                 <v-list-item-title class="text-yellow"><v-icon :icon="item.icon"></v-icon> {{ item.title }}</v-list-item-title>
               </v-list-item>
           </v-list>

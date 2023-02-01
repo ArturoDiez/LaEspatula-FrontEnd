@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <v-img
     class= "rounded-lg"
     src="../assets/banner-espatula-web.png"

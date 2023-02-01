@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <h1>PRIVACY NOTICE</h1>
 
 Last updated May 01, 2022

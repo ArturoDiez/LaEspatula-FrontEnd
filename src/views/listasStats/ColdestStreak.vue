@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
      <DataTable :value="coldest" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
                     stripedRows>
                     <template #header>

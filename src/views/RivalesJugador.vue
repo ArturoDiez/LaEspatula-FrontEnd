@@ -1,4 +1,5 @@
 <template>
+<AdsTemplate/>
 <h1 style="text-align:center"> Rivales de {{ nick }}</h1>
 <h2 style="text-align:center"> {{ msj }}</h2>
 <br/>

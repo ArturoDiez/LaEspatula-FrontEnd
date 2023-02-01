@@ -1,5 +1,6 @@
 
 <template>
+<AdsTemplate/>
         <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         stripedRows>
         <template #header>
@@ -52,6 +53,7 @@
             </template></Column>
             <Column field="topEUW" header="Top EUW" style="width:30px"></Column>
         </DataTable>
+<AdsTemplate/>
 </template>
 
 <script>
