@@ -1,7 +1,13 @@
-# FrontEnd de La Espátula
+# FrontEnd La Espátula
 
 ```
-Frontend que consume la API de la espátula creado en Vue3
+Frontend consumed by the API "La Espátula" created with Vue3
+Link to the webpage: https://laespatula.net/
+
+It shows ladder stats from spanish players from the videogame Teamfight Tactics (TFT) made by Riot Games.
+Info about the competitives leagues from Spain and Europe can also be found, for the current set and old ones.
+
+This project is not related to Riot, it only uses the public data given by the Riot API.
 ```
 
 ## Project setup
