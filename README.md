@@ -4,64 +4,25 @@
 Frontend consumed by the API "La Espátula" created with Vue3
 Link to the webpage: https://laespatula.net/
 
-It shows ladder stats from spanish players from the videogame Teamfight Tactics (TFT) made by Riot Games.
-Info about the competitives leagues from Spain and Europe can also be found, for the current set and old ones.
+It shows ladder stats from spanish players
+ from the videogame Teamfight Tactics (TFT) made by Riot Games.
+Info about the competitives leagues from Spain and Europe can also be found,
+ for the current set and old ones.
 
 This project is not related to Riot, it only uses the public data given by the Riot API.
 ```
 
-## Project setup
+## La Espátula project
 
-```
-# yarn
-yarn
+### Backend
 
-# npm
-npm install
+- Django + Django REST Framework
+- PostgreSQL
+- Pyspark (scripts as help for data management in the /scripts folder)
 
-# pnpm
-pnpm install
-```
+Link to API: https://github.com/ArturoDiez/LaEspatula-Public-API
 
-### Compiles and hot-reloads for development
+### Frontend
 
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Lints and fixes files
-
-```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+- Vue3 + Vite
+- Vuetify
