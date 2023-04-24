@@ -105,9 +105,8 @@
         Ranking de las GSCs.</div>
     </v-card-text>
  </v-card>
-          <DataTable :value="itemsCups" responsiveLayout="scroll"  class="custom_table_class"
+          <DataTable :value="itemsCup" responsiveLayout="scroll"  class="custom_table_class"
         stripedRows>
-          
             <Column field="POSITION" header="Posición" style="text-align:center;width:30px" ></Column>
             <Column field="SUMMONER" header="Cuenta"></Column>
             <Column field="FASE" header="Fase"></Column>
@@ -136,7 +135,8 @@
             <Column field="GSC1" header="GSC1"></Column>
             <Column field="GSC2" header="GSC2"></Column>
             <Column field="GSC3" header="GSC3"></Column>
-            <Column field="PUNTOS" header="Puntos" style="width:30px" sortable="true"></Column> 
+            <Column field="PUNTOS" header="Puntos" style="width:30px" sortable="true"></Column>
+            <Column field="PAIS" header="País"></Column>
         </DataTable>
         </v-window-item>
       </v-window>
@@ -149,14 +149,15 @@ export default{
   setup() {
     const selectedSnap = ref();
     const selectedCup = ref();
-    const snapshots =  ref(['Snapshot 1', 'Snapshot 2']);
-    const cups =  ref([]);
+    const snapshots =  ref(['Snapshot 1', 'Snapshot 2', 'Snapshot 3', 'Snapshot 4', 'Snapshot 5','Snapshot 6'
+    ,'Snapshot 7','Snapshot 8']);
+    const cups =  ref(['GSC 1', 'GSC 2']);
 
         watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsEU/8/" + newValue )
             .then(res => res.json())
             .then(data => itemsSnap.value = data.datos))
 
-        watch(selectedCup, (newValue) => fetch("https://api.laespatula.net/GSCEU/8/" + newValue )
+        watch(selectedCup, (newValueCup) => fetch("https://api.laespatula.net/GSCEU/8/" + newValueCup )
             .then(res => res.json())
             .then(data => itemsCup.value = data.datos))
 

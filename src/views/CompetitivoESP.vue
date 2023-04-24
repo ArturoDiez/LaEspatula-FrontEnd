@@ -122,7 +122,8 @@
     </v-card-title>
 
     <v-card-text>
-      <div> Los 6 que han sumado más puntos a lo largo de las Master Cups se clasificarán a las finales nacionales.</div>
+      <div> Los 6 que han sumado más puntos a lo largo de las Master Cups se clasificarán a las finales nacionales (aparte de los 6
+        clasificados directos por top2 de Master Cup).</div>
     </v-card-text>
  </v-card>
           <DataTable :value="itemsCupTotal" responsiveLayout="scroll"  class="custom_table_class"
@@ -146,8 +147,9 @@ export default{
   setup() {
     const selectedSnap = ref();
     const selectedCup = ref();
-    const snapshots =  ref(['Snapshot 1', 'Snapshot 2','Snapshot 3']);
-    const cups =  ref(['MasterCup 1']);
+    const snapshots =  ref(['Snapshot 1', 'Snapshot 2','Snapshot 3', 'Snapshot 4', 'Snapshot 5', 'Snapshot 6'
+    ,'Snapshot 7']);
+    const cups =  ref(['MasterCup 1', 'MasterCup 2']);
 
         watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsESP/8/" + newValue )
             .then(res => res.json())

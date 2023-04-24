@@ -39,7 +39,7 @@ export default{
   
   setup() {
     const selectedSet = ref()
-    const sets =  ref(['8'])
+    const sets =  ref(['8.5','8'])
 
         watch(selectedSet, (newValue) => fetch("https://api.laespatula.net/top1EU/" + newValue ).then(res => res.json())
             .then(data => items.value = data))
