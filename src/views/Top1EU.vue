@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-select
   v-model="selectedSet"
   label="Set"
@@ -11,13 +10,7 @@
         <template #header>
              <h2 style="text-align:center" class="titulo">Top1 TFT Europa</h2>
         </template>
-            <Column field="cuenta" header="Cuenta" sortable="true">
-            <template #body="slotProps">
-              <a :href="slotProps.data.cuenta" target="_blank">
-                <h4 class="cuenta">{{slotProps.data.cuenta}}</h4>
-              </a>
-            </template>
-            </Column>
+            <Column field="cuenta" header="Cuenta" sortable="true"></Column>
             <Column field="start_date" header="Fecha de Inicio" sortable="true">
             <template #body="slotProps">
                         {{formatDate(slotProps.data.start_date)}}
@@ -39,7 +32,7 @@ export default{
   
   setup() {
     const selectedSet = ref()
-    const sets =  ref(['8.5','8'])
+    const sets =  ref(['11','10','9.5','9','8.5','8'])
 
         watch(selectedSet, (newValue) => fetch("https://api.laespatula.net/top1EU/" + newValue ).then(res => res.json())
             .then(data => items.value = data))

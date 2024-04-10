@@ -1,10 +1,14 @@
 <template>
-<AdsTemplate/>
      <DataTable :value="coldest" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
                     stripedRows>
                     <template #header>
                         <h2 style="text-align:center">Peores rachas activas</h2>
                     </template>
+                    <Column field="position" header="Posición" style="text-align:center;width:30px" >
+                        <template #body="slotProps">
+                            {{coldest.indexOf(slotProps.data)+1}}
+                        </template>
+                    </Column>
                     <Column field="cuenta" header="Cuenta"></Column>
                     <Column field="streak" header="Racha"></Column>
         </DataTable>

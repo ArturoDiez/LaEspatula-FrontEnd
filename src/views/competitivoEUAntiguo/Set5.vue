@@ -1,6 +1,4 @@
-
 <template>
-<AdsTemplate/>
 <v-container>
   <v-row>
   <v-card
@@ -20,17 +18,14 @@
 </v-container>
 
 <br/>
-
         <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         stripedRows sortField="puntosMundialReckoning" :sortOrder="-1" >
-            <Column field="nick" header="Nick"></Column>
-            <Column field="semana1Reckoning" header="Semana 1"></Column>
-            <Column field="semana2Reckoning" header="Semana 2"></Column>
-            <Column field="semana3Reckoning" header="Semana 3"></Column>
-            <Column field="puntosMundialReckoning" header="Puntos" style="width:30px" sortable="true"></Column> 
+            <Column field="Nick" header="Nick"></Column>
+            <Column field="Semana 1" header="Semana 1"></Column>
+            <Column field="Semana 2" header="Semana 2"></Column>
+            <Column field="Semana 3" header="Semana 3"></Column>
+            <Column field="Puntos" header="Puntos" style="width:30px" sortable="true"></Column> 
         </DataTable>
-
-
 </template>
 
 <script>
@@ -40,13 +35,13 @@ export default{
   setup() {
         onMounted(() => {
             fetch("https://api.laespatula.net/puntosMundialReckoning").then(res => res.json())
-            .then(data => items.value = data);
+            .then(data => items.value = data.datos);
         })
 
         const items = ref();
        
 
-        return { items}
+        return {  items }
     }
 }
 

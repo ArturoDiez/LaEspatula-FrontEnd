@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-container>
   <v-row>
  
@@ -67,7 +66,11 @@
           <DataTable :value="itemsLadder" responsiveLayout="scroll"  class="custom_table_class"
         stripedRows>
           
-            <Column field="POSITION" header="Posición" style="text-align:center;width:30px" ></Column>
+            <Column field="POSITION" header="Posición" style="text-align:center;width:30px" >
+            <template #body="slotProps">
+              {{itemsLadder.indexOf(slotProps.data)+1}}
+            </template>
+            </Column>
             <Column field="NAME" header="Cuenta"></Column>
             <Column field="SS1" header="SS1"></Column>
             <Column field="SS2" header="SS2"></Column>
@@ -75,11 +78,6 @@
             <Column field="SS4" header="SS4"></Column>
             <Column field="SS5" header="SS5"></Column>
             <Column field="SS6" header="SS6"></Column>
-            <Column field="SS7" header="SS7"></Column>
-            <Column field="SS8" header="SS8"></Column>
-            <Column field="SS9" header="SS9"></Column>
-            <Column field="SS10" header="SS10"></Column>
-            <Column field="SS11" header="SS11"></Column>
             <Column field="TOTAL" header="Puntos" style="width:30px" sortable="true"></Column> 
         </DataTable>
         </v-window-item>
@@ -131,12 +129,12 @@
         stripedRows>
           
             <Column field="POSITION" header="Posición" style="text-align:center;width:30px" ></Column>
-            <Column field="SUMMONER" header="Cuenta"></Column>
+            <Column field="NAME" header="Cuenta"></Column>
             <Column field="GSC1" header="GSC1"></Column>
             <Column field="GSC2" header="GSC2"></Column>
             <Column field="GSC3" header="GSC3"></Column>
-            <Column field="PUNTOS" header="Puntos" style="width:30px" sortable="true"></Column>
-            <Column field="PAIS" header="País"></Column>
+            <Column field="TOTAL" header="Puntos" style="width:30px" sortable="true"></Column>
+            <Column field="COUNTRY" header="País"></Column>
         </DataTable>
         </v-window-item>
       </v-window>
@@ -149,22 +147,21 @@ export default{
   setup() {
     const selectedSnap = ref();
     const selectedCup = ref();
-    const snapshots =  ref(['Snapshot 1', 'Snapshot 2', 'Snapshot 3', 'Snapshot 4', 'Snapshot 5','Snapshot 6'
-    ,'Snapshot 7','Snapshot 8']);
-    const cups =  ref(['GSC 1', 'GSC 2']);
+    const snapshots =  ref(['Snapshot 1', 'Snapshot 2', 'Snapshot 3', 'Snapshot 4', 'Snapshot 5','Snapshot 6']);
+    const cups =  ref(['GSC 1']);
 
-        watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsEU/8/" + newValue )
+        watch(selectedSnap, (newValue) => fetch("https://api.laespatula.net/snapshotsEU/11/" + newValue )
             .then(res => res.json())
             .then(data => itemsSnap.value = data.datos))
 
-        watch(selectedCup, (newValueCup) => fetch("https://api.laespatula.net/GSCEU/8/" + newValueCup )
+        watch(selectedCup, (newValueCup) => fetch("https://api.laespatula.net/GSCEU/11/" + newValueCup )
             .then(res => res.json())
             .then(data => itemsCup.value = data.datos))
 
         onMounted(() => {
-            fetch("https://api.laespatula.net/totalSnapEU/8").then(res => res.json())
+            fetch("https://api.laespatula.net/totalSnapEU/11").then(res => res.json())
             .then(data => itemsLadder.value = data.datos);
-            fetch("https://api.laespatula.net/totalGSCEU/8").then(res => res.json())
+            fetch("https://api.laespatula.net/totalGSCEU/11").then(res => res.json())
             .then(data => itemsCupTotal.value = data.datos);
         })
             

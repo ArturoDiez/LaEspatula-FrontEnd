@@ -1,9 +1,4 @@
 <template>
-<AdsTemplate/>
-<v-img
-    class= "rounded-lg"
-    src="../assets/banner-espatula-web.png"
-    /> 
 <br/>
 <v-container>
   <v-row justify="space-around">

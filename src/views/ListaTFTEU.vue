@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-container>
   <h1 style="text-align:center" class="titulo">Cortes de ELO</h1>
   <br/>
@@ -11,7 +10,7 @@
     elevation="5"
   >
   <v-card-title >
-      <div> Corte del top 26 = <a v-if="dataGeneral">{{ dataGeneral.top26 }} LPs</a></div>
+      <div> Corte del top 35 = <a v-if="dataGeneral">{{ dataGeneral.top26 }} LPs</a></div>
     </v-card-title>
   </v-card>
     
@@ -42,16 +41,33 @@
   :items="ligas"
 >
 </v-select>
+<v-container>
+  <v-row  no-gutters>
+    <v-col>
+<div class="search-wrapper">
+    <v-text-field
+      v-model="search"
+      variant="outlined"
+      label="Buscar jugador por nombre de invocador..."
+      single-line
+      hide-details
+      clearable
+    ></v-text-field>
+</div>
+</v-col>
+<v-col cols="2" class="refresh-button-container" justify="start">
+      <v-btn @click="refreshList" block variant="plain" elevation="10" class="titulo">Actualizar lista</v-btn>
+  </v-col>
+</v-row>
+</v-container>
+
         <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class"
         stripedRows>
         <template #header>
              <h1 style="text-align:center" class="titulo">Top TFT Europa</h1>
         </template>
           
-            <Column field="topESP" header="Rango" sortable="true" style="text-align:center;width:30px" >
-            <template #body="slotProps">
-              {{items.indexOf(slotProps.data)+1}}
-            </template>
+            <Column field="topEUW" header="TopEUW" sortable="true" style="text-align:center;width:30px" >
             </Column>
             <Column field="summonerName" header="Cuenta"></Column>
             <Column field="leaguePoints" header="LPs"></Column>
@@ -64,27 +80,58 @@
 </template>
 
 <script>
-import { ref, watch} from "vue";
 
-export default{
-  setup() {
-    const selectedLiga = ref();
-    const ligas =  ref(['Challenger','GrandMaster','Master']);
-
-        watch(selectedLiga, (newValue) => fetch("https://api.laespatula.net/listaTFTEU/" + newValue )
-            .then(res => res.json())
-            .then(data => dataGeneral.value = data)
-            .then(data => items.value = data.lista.datos))
-            
-
-        const items = ref();
-        const dataGeneral = ref()
-
-
-        return { items, ligas, selectedLiga, dataGeneral}
+export default {
+  data() {
+    return {
+      search: "",
+      selectedLiga: "",
+      ligas: ["Challenger", "GrandMaster", "Master"],
+      items: [],
+      dataGeneral: null,
+    };
+  },
+  methods: {
+    filterItems() {
+      if (this.search) {
+        this.items = this.items.filter((item) =>
+          item.summonerName.toLowerCase().includes(this.search.toLowerCase())
+        );
+      } else {
+        this.fetchTableData();
+      }
     },
-}
+    fetchTableData() {
+      if (this.selectedLiga === "") {
+        this.selectedLiga = "Challenger";
+      }
+      fetch("https://api.laespatula.net/listaTFTEU/" + this.selectedLiga)
+        .then((res) => res.json())
+        .then((data) => {
+          this.dataGeneral = data;
+          this.items = data.lista.datos;
+        })
+        .catch((error) => {
+          console.error("Error fetching table data:", error);
+        });
+    },
+    refreshList() {
+      this.fetchTableData();
+    }
+  },
 
+  created() {
+    this.fetchTableData();
+  },
+  watch: {
+    selectedLiga() {
+      this.fetchTableData();
+    },
+    search() {
+      this.filterItems();
+    },
+  },
+};
 </script>
 
 <style>
@@ -106,5 +153,14 @@ export default{
 
 .titulo{
   color:yellow
+}
+.search-wrapper {
+  width: 500px; 
+  margin-bottom: 20px; 
+}
+.refresh-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 </style>

@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-select
   v-model="selectedSet"
   label="Set"
@@ -39,7 +38,7 @@ export default{
   
   setup() {
     const selectedSet = ref()
-    const sets =  ref(['8.5','8','7.5','7'])
+    const sets =  ref(['11','10','9.5','9','8.5','8','7.5','7'])
 
         watch(selectedSet, (newValue) => fetch("https://api.laespatula.net/top1Esp/" + newValue ).then(res => res.json())
             .then(data => items.value = data))

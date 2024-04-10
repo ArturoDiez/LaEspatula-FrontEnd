@@ -1,6 +1,15 @@
 <template>
-<AdsTemplate/>
 <h1 style="text-align:center"> Datos de <a v-if="jugador != undefined"> {{jugador.nick}} </a> <a v-if="jugador == undefined"> jugador erróneo </a></h1>
+<br/>
+
+<div v-if="jugador == undefined" style="display: flex; justify-content: center; align-items: center">
+  <h2> ¿Has introducido bien el nombre de invocador? Vuelve a intentarlo.</h2>
+</div>
+
+<div v-if="jugador == undefined" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <img src="../assets/shocked-pengu.gif" alt="LOLChess" style="width: 30%; height: auto;">
+</div>
+
 <div v-if="jugador != undefined">
     <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         stripedRows>
@@ -203,8 +212,8 @@ export default {
 
     return {jugador, racha, hot, hottest, cold, coldest, pico, posMed, data, basicOptions, items}
     },
+};
 
-}
 </script>
 
 <style>

@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-container>
   <v-row>
  

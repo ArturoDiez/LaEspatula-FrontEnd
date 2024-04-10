@@ -32,6 +32,26 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/Stats.vue'),
       },
       {
+        path: 'augmentStats',
+        name: 'AugmentStats',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/listasStats/Augments.vue'),
+      },
+      {
+        path: 'objectStats',
+        name: 'ObjectStats',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/listasStats/Objects.vue'),
+      },
+      {
+        path: 'sinergiaStats',
+        name: 'SinergiaStats',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/listasStats/Sinergias.vue'),
+      },
+      {
+        path: 'unitStats',
+        name: 'UnitStats',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/listasStats/Units.vue'),
+      },
+      {
         path: 'hottestStreak',
         name: 'HottestStreak',
         component: () => import(/* webpackChunkName: "home" */ '@/views/listasStats/HottestStreak.vue'),
@@ -92,6 +112,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/Online.vue'),
       },
       {
+        path: 'halloffame',
+        name: 'Hof',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/HallOfFame.vue'),
+      },
+      {
         path: 'listaTFTEU',
         name: 'ListaTFTEU',
         component: () => import(/* webpackChunkName: "home" */ '@/views/ListaTFTEU.vue'),
@@ -112,9 +137,24 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoESPAntiguo.vue'),
       },
       {
+        path: 'competitivoESPAntiguo/Set10',
+        name: 'CompetitivoESPAntiguo/Set10',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoESPAntiguo/Set10.vue'),
+      },
+      {
+        path: 'competitivoESPAntiguo/Set9',
+        name: 'CompetitivoESPAntiguo/Set9',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoESPAntiguo/Set9.vue'),
+      },
+      {
+        path: 'competitivoESPAntiguo/Set8',
+        name: 'CompetitivoESPAntiguo/Set8',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoESPAntiguo/Set8.vue'),
+      },
+      {
         path: 'competitivoESPAntiguo/Set7',
         name: 'CompetitivoESPAntiguo/Set7',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoESPAntiguo/Set7.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoESPAntiguo/Set7.vue'),
       },
       {
         path: 'competitivoEUAntiguo',
@@ -122,19 +162,34 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoEUAntiguo.vue'),
       },
       {
+        path: 'competitivoEUAntiguo/Set10',
+        name: 'CompetitivoEUAntiguo/Set10',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoEUAntiguo/Set10.vue'),
+      },
+      {
+        path: 'competitivoEUAntiguo/Set9',
+        name: 'CompetitivoEUAntiguo/Set9',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoEUAntiguo/Set9.vue'),
+      },
+      {
+        path: 'competitivoEUAntiguo/Set8',
+        name: 'CompetitivoEUAntiguo/Set8',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoEUAntiguo/Set8.vue'),
+      },
+      {
         path: 'competitivoEUAntiguo/Set7',
         name: 'CompetitivoEUAntiguo/Set7',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoEUAntiguo/Set7.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoEUAntiguo/Set7.vue'),
       },
       {
         path: 'competitivoEUAntiguo/Set5',
         name: 'CompetitivoEUAntiguo/Set5',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoEUAntiguo/Set5.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoEUAntiguo/Set5.vue'),
       },
       {
         path: 'competitivoEUAntiguo/Set4',
         name: 'CompetitivoEUAntiguo/Set4',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/CompetitivoEUAntiguo/Set4.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/competitivoEUAntiguo/Set4.vue'),
       },
       {
         path: 'termino',

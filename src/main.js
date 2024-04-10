@@ -24,6 +24,7 @@ import ColumnGroup from 'primevue/columngroup';     //optional for column groupi
 import Row from 'primevue/row';  
 import InputText from 'primevue/inputtext';
 import Chart from 'primevue/chart';
+import 'chartjs-plugin-zoom';
 
 import 'chartjs-adapter-moment';
 import ScriptX from 'vue-scriptx';

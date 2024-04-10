@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-container>
   <v-row>
 <v-card
@@ -43,11 +42,11 @@
         <v-window-item value="España">
         <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         sortField="puntosMundialFates" :sortOrder="-1" stripedRows>
-            <Column field="nick" header="Nick"></Column>
-            <Column field="semana1Fates" header="Semana 1"></Column>
-            <Column field="semana2Fates" header="Semana 2"></Column>
-            <Column field="semana3Fates" header="Semana 3"></Column>
-            <Column field="puntosMundialFates" header="Puntos" style="width:30px" sortable="true"></Column> 
+            <Column field="Nick" header="Nick"></Column>
+            <Column field="Semana 1" header="Semana 1"></Column>
+            <Column field="Semana 2" header="Semana 2"></Column>
+            <Column field="Semana 3" header="Semana 3"></Column>
+            <Column field="Puntos" header="Puntos" style="width:30px" sortable="true"></Column> 
         </DataTable>
       </v-window-item>
       
@@ -61,7 +60,7 @@ export default{
   setup() {
         onMounted(() => {
             fetch("https://api.laespatula.net/puntosMundialFates").then(res => res.json())
-            .then(data => items.value = data);
+            .then(data => items.value = data.datos);
 
             fetch("https://api.laespatula.net/puntosMundialFatesEU").then(res => res.json())
             .then(data => itemsEU.value = data)

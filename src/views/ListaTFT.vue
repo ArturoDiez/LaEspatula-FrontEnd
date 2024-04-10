@@ -1,5 +1,4 @@
 <template>
-<AdsTemplate/>
 <v-container>
   <v-row>
   <v-card
@@ -22,6 +21,26 @@
  </v-row>
 </v-container>
 <br/>
+<v-container>
+  <v-row  no-gutters>
+    <v-col>
+<div class="search-wrapper">
+    <v-text-field
+      v-model="search"
+      variant="outlined"
+      label="Buscar jugador por nick..."
+      single-line
+      hide-details
+      clearable
+    ></v-text-field>
+</div>
+</v-col>
+<v-col cols="2" class="refresh-button-container" justify="start">
+      <v-btn @click="refreshList" block variant="plain" elevation="10" class="titulo">Actualizar lista</v-btn>
+  </v-col>
+</v-row>
+</v-container>
+
         <DataTable :value="items" responsiveLayout="scroll"  class="custom_table_class p-datatable-sm"
         stripedRows>
         <template #header>
@@ -77,22 +96,47 @@
 </template>
 
 <script>
-import { ref, onMounted} from "vue";
-
-export default{
-  setup() {
-        onMounted(() => {
-            fetch("https://api.laespatula.net/listaTFT?").then(res => res.json())
-            .then(data => items.value = data);
+export default {
+  data() {
+    return {
+      search: "",
+      items: [],
+    };
+  },
+  methods: {
+    filterItems() {
+      if (this.search) {
+        this.items = this.items.filter((item) =>
+          item.nick.toLowerCase().includes(this.search.toLowerCase())
+        );
+      } else {
+        this.fetchTableData();
+      }
+    },
+    fetchTableData() {
+      fetch("https://api.laespatula.net/listaTFT?")
+        .then((response) => response.json())
+        .then((data) => {
+          this.items = data;
         })
+        .catch((error) => {
+          console.error("Error fetching table data:", error);
+        });
+    },
 
-        const items = ref();
-    
-
-        return { items}
+    refreshList() {
+      this.fetchTableData();
     }
-}
-
+  },
+  created() {
+    this.fetchTableData(); 
+  },
+  watch: {
+    search() {
+      this.filterItems();
+    },
+  },
+};
 </script>
 
 <style>
@@ -114,5 +158,14 @@ export default{
 
 .titulo{
   color:yellow
+}
+.search-wrapper {
+  width: 300px; 
+  margin-bottom: 20px; 
+}
+.refresh-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 </style>
